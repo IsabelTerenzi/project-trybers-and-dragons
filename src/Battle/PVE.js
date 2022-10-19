@@ -9,9 +9,9 @@ class PVE extends Battle_1.default {
     }
     fight() {
         this._monsters.forEach((monster) => {
-            while (monster.lifePoints > 0) {
+            while (monster.lifePoints > 0 && this._playerOne.lifePoints > 0) {
                 this._playerOne.attack(monster);
-                this._playerOne.receiveDamage(monster.strength);
+                monster.attack(this._playerOne);
             }
         });
         return super.fight();
