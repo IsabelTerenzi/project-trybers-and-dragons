@@ -1,6 +1,6 @@
 import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 import Race, { Elf } from './Races';
 import getRandomInt from './utils';
 
@@ -73,7 +73,7 @@ class Character implements Fighter {
     return this._lifePoints;
   }
 
-  attack(enemy: Fighter): void {
+  attack(enemy: Fighter | SimpleFighter): void {
     // o dano recebe como parâmetro os pontos de ataque, que nesse caso é o valor da força do fighter.
     enemy.receiveDamage(this._strength);  
   }
