@@ -63,9 +63,7 @@ class Character implements Fighter {
     const damage = attackPoints - this._defense;
     
     // se o dano for maior que zero, o valor de vida perdido é igual a esse dano.
-    if (damage > 0) {
-      this._lifePoints -= damage;
-    }
+    if (damage > 0) this._lifePoints -= damage;
 
     // se o valor de vida chega a 0, ele se fixa em -1.
     if (this._lifePoints <= 0) this._lifePoints = -1;
