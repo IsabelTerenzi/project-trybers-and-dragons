@@ -13,7 +13,6 @@ class Character implements Fighter {
   private _defense: number;
   private _dexterity: number;
   private _energy: Energy;
-  private _name: string;
 
   constructor(name: string) {
     this._dexterity = getRandomInt(1, 10);
@@ -26,8 +25,7 @@ class Character implements Fighter {
     this._energy = {
       type_: this._archetype.energyType,
       amount: getRandomInt(1, 10),
-    }; 
-    this._name = name; 
+    };
   }
 
   get race(): Race {
